@@ -1,0 +1,167 @@
+/* ==========================================
+   1. RESET Y ESTILOS GENERALES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Asegura que el layout pueda usar altura completa y permitir footer pegajoso */
+html, body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    display: flex; /* Permite colocar header/content/footer en columna */
+    flex-direction: column;
+    min-height: 100vh; /* Asegura mínimo alto de la ventana */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   2. ESTRUCTURA BASE (ESCRITORIO)
+   ========================================== */
+
+.header-principal {
+    background-color: #2980b9;
+    color: rgb(173, 20, 20);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-principal a {
+    color: rgb(209, 21, 21);
+    font-weight: bold;
+}
+
+/* Marca / logo en el header */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand .logo {
+    height: 48px; /* Ajusta la altura del logo */
+    width: auto;
+    display: block;
+}
+
+.contenedor-principal {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgb(189, 19, 19);
+    border-radius: 8px;
+    border: 1px solid #000000;
+    flex: 1; /* Ocupa el espacio disponible para empujar el footer hacia abajo */
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+
+/* Flexbox para los servicios en línea */
+.grupo-servicios {
+    display: flex;
+    gap: 20px;
+}
+
+.tarjeta-servicio {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 6px;
+    flex: 1; /* Todas las tarjetas crecen por igual */
+    text-align: center;
+}
+
+.barra-lateral {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff3cd;
+    padding: 15px;
+    border: 1px solid #ffeeba;
+    text-align: center;
+    border-radius: 6px;
+
+}
+
+.pie-pagina {
+    text-align: center;
+    padding: 20px;
+    background-color: #c21616;
+    color: white;
+    margin-top: auto; /* En layouts flex, empuja el footer al final de la columna */
+}
+
+h4 p .barra-lateral{
+    text-decoration: none;
+}
+
+/* ==========================================
+   3. DISEÑO RESPONSIVO (MOBILE)
+   ========================================== */
+
+/* Se activa cuando la pantalla es menor a 768px (Tablets y Celulares) */
+@media (max-width: 768px) {
+    
+    .header-principal {
+        flex-direction: column; /* Apila el logo sobre el menú */
+        text-align: center;
+        gap: 15px;
+    }
+
+    /* Logo más pequeño en móviles */
+    .brand .logo {
+        height: 40px;
+    }
+
+    .nav-principal ul {
+        flex-direction: column; /* Menú vertical */
+        gap: 10px;
+    }
+
+    .contenedor-principal {
+        margin: 10px; /* Menos margen en pantallas chicas */
+        padding: 15px;
+    }
+
+    .grupo-servicios {
+        flex-direction: column; /* Las tarjetas se apilan una debajo de otra */
+    }
+
+    .tarjeta-servicio {
+        flex: none; /* Desactiva el crecimiento igualitario horizontal */
+        width: 100%;
+    }
+
+    .hero h2 {
+        font-size: 22px; /* Título más pequeño para móviles */
+    }
+
+}
+
+
+
